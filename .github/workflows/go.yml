@@ -16,13 +16,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: running the pocketbase server
-      run : cd pocketbase_0.22.12_linux_amd64 && ./pocketbase serve && curl http://127.0.0.1:8090
 
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
         go-version: '1.22.3'
+
+    - name: running the pocketbase server
+      run : cd pocketbase_0.22.12_linux_amd64 && ./pocketbase serve && go test -v ./..
+  
 
     - name: Build
       run: go build -v ./...
