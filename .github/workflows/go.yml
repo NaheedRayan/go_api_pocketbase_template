@@ -16,6 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: running the pocketbase server
+      run : cd pocketbase_0.22.12_linux_amd64 && ./pocketbase serve
+
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
