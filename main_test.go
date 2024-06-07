@@ -21,14 +21,14 @@ func TestHello(t *testing.T) {
 	defer res.Body.Close()
 
 	if res.StatusCode != http.StatusOK {
-		t.Errorf("expected status OK; got %v", res.Status)
+		t.Fatalf("expected status OK; got %v", res.Status)
 	}
 
 	// expected := "Hello from the GOLANG and MUX\n"
 	expected := "Hello world\n"
 	body := rec.Body.String()
 	if body != expected {
-		t.Errorf("expected body to be %q; got %q", expected, body)
+		t.Fatalf("expected body to be %q; got %q", expected, body)
 	}
 }
 
