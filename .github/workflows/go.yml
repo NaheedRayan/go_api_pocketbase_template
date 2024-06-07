@@ -23,11 +23,16 @@ jobs:
         go-version: '1.22.3'
 
     - name: running the pocketbase server
-      run : cd pocketbase_0.22.12_linux_amd64 && ./pocketbase serve && go test -v ./..
+      run : cd pocketbase_0.22.12_linux_amd64 && ./pocketbase serve &
   
-
+    - name: Test PocketBase Server
+      run: go test -v server_test.go
+    
     - name: Build
       run: go build -v ./...
 
-    - name: Test
-      run: go test -v ./...
+    # - name: Test
+    #   run: go test -v ./...
+
+    - name: Test main project
+      run: go test -v main_test.go
