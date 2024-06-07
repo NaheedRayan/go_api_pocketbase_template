@@ -96,3 +96,19 @@ To run the tests locally:
 go test -v ./...
 ```
 
+
+Testing the main app
+```bash
+go test -v main_test.go
+```
+
+Running the pocketbase server.
+```
+cd pocketbase_0.22.12_linux_amd64 && ./pocketbase serve
+```
+
+Testing the pocketbase server
+```bash
+go test -v server_test.go
+```
+
