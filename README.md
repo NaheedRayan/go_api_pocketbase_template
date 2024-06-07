@@ -15,6 +15,7 @@ go_api_pocketbase_template
 |
 |--go.mod                          # Go module file
 |--go.sum                          # Go dependencies checksum file
+|--main_test.go                    # Testing file
 |--main.go                         # Main entry point of the Go application
 |--README.md                       # Documentation file
 
@@ -78,4 +79,20 @@ Sure, here are all the endpoints summarized in six lines:
 
 You can config the `pocketbase` url and endpoint on `routes/routes.go` on line 15,16.
 
+
+
+
+
+
+## Running the Application and Tests
+To run your application with a custom listening address:
+
+```bash
+go run main.go --listenAddr :2000
+```
+
+To run the tests locally:
+```bash
+go test -v ./...
+```
 
