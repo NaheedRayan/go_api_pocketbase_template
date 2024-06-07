@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: running the pocketbase server
-      run : cd pocketbase_0.22.12_linux_amd64 && ./pocketbase serve
+      run : cd pocketbase_0.22.12_linux_amd64 && ./pocketbase serve && curl http://127.0.0.1:8090
 
     - name: Set up Go
       uses: actions/setup-go@v4
